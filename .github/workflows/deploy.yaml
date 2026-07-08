@@ -1,0 +1,47 @@
+# main ブランチに最新コードが push された際に、
+# 事前に用意した include.txt で指定している必要なファイル、ディレクトリ群のみを
+# preproduction ブランチにコミットする
+
+name: Prepare release packages
+
+on:
+  push:
+    branches: [ "main" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # event.json から src/index.html を再生成する(ローカルでの生成漏れに対する保険)
+    - name: Generate index.html from event.json
+      run: node build.js
+
+    # 秘密鍵を設置
+    - name: ssh key generate
+      run: |
+        mkdir -p ~/.ssh/
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+
+    # ssh rsync実行
+    # -a コピー元のディレクトリを再帰的にオーナー・グループ・パーミッション・タイムスタンプをそのままコピーします。
+    # -h でファイルサイズの視認性をよくする。
+    # -v 詳細を出力する。
+    # -z 圧縮転送
+    # --delete 転送元に無いファイルをサーバー側から削除
+    # -e ssh指定
+    - name: Deploy
+      run: rsync -ahvz --delete -e "ssh -i ~/.ssh/id_rsa -p ${{ secrets.SSH_PORT }} -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no" ./src/ ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:/home/cyancobra4/www/stage/NxPC78/
+
+    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+    # Docs: https://getcomposer.org/doc/articles/scripts.md
+
+    # - name: Run test suite
+    #   run: composer run-script test

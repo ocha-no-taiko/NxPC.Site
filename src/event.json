@@ -1,0 +1,109 @@
+{
+    "event": {
+        "title": "NxPC.Live vol.78",
+        "date": "2026.6.19",
+        "dayOfWeek": "Fri",
+        "openTime": "18:00",
+        "closeTime": "21:00",
+        "venue": {
+            "name": "IAMAS GALLERY 1",
+            "address": "岐阜県大垣市加賀野4丁目1-7 ソフトピアジャパン センタービル3階",
+            "addressLinesSp": [
+                "IAMAS GALLERY 1",
+                "岐阜県大垣市加賀野4丁目1-7",
+                "ソフトピアジャパン センタービル3階"
+            ]
+        },
+        "about": [
+            "クラブやライブにおけるアーティストと観客の相互作用を追求するNxPC.Lab。 メディアテクノロジーを駆使して、音楽体験を拡張し、観客を巻き込む場の臨場感を創り出す。現代のメディア体験において必要とされる対話性、参加性をデバイス、インタフェース、ネットワークといったメディアテクノロジーを駆使することで、音楽体験を拡張し、音楽空間におけるコミュニケーションを次のステージへ導くための研究開発、イベントを実施している。",
+            "実験の場としてのイベントNxPC.Liveを中心に、レクチャーやワークショップ、ネットラジオなどの活動を行っている。"
+        ]
+    },
+    "live": {
+        "url": "https://www.youtube.com/@nxpclab",
+        "start": "2026-06-19 18:00:00",
+        "end": "2026-06-19 21:00:00"
+    },
+    "theme": {
+        "colors": {
+            "background": "#0A0A0A",
+            "text": "#FFFFFF",
+            "accent": "#0000FF"
+        },
+        "fonts": {
+            "stylesheets": [
+                "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap",
+                "https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap",
+                "https://use.typekit.net/dxk7knf.css"
+            ],
+            "body": "'Noto Sans', sans-serif",
+            "heading": "'redaction-50', sans-serif",
+            "performerTitle": "'noto-sans', sans-serif"
+        }
+    },
+    "assets": {
+        "videos": {
+            "pcFirst": "./assets/videos/green_pc.mp4",
+            "pcSecond": "./assets/videos/purple_pc.mp4",
+            "sp": "./assets/videos/movie_sp.mp4"
+        },
+        "logos": {
+            "pc": "./assets/logo_anim.lottie.json",
+            "sp": "./assets/logo_sp.lottie.json"
+        },
+        "timetable": "./assets/images/timetable.png",
+        "youtubeIcon": "./assets/images/youtube_logo.png"
+    },
+    "credits": [
+        "visual design: OUGA ,米田 , Yuki Yoshikawa",
+        "web: ichinose ,Tusq ,AOK"
+    ],
+    "performers": [
+        {
+            "teamName": "三工",
+            "description": "工。工！工？<br><br>※ 工学系３名によるチームです。",
+            "tags": [],
+            "images": [
+                "./assets/images/performer1.png",
+                "./assets/images/performer2.png",
+                "./assets/images/performer3.png"
+            ]
+        },
+        {
+            "teamName": "プラネタリア",
+            "description": "意識は、宇宙の夢を見る。 <br>ここは、生命的な宇宙の創発の場。 <br>みんなで生命が生まれる瞬間について考えていきましょう。",
+            "tags": [],
+            "images": [
+                "./assets/images/performer4.png",
+                "./assets/images/performer5.png",
+                "./assets/images/performer6.png"
+            ]
+        },
+        {
+            "teamName": "po-yoyo",
+            "description": "poyoyo　は　じかんを　さまよう <br>見えているよう　で　見えていない <br>そこにあるよう　で　いてそこにはない <br>たりているよう　で　欠けている <br>あなたの記憶は補完される <br>poyoyo　の　ことを見つめていれば <br>どこにもある　けど　どこにもない <br>いない　しらない　ここではないどこか",
+            "tags": [],
+            "images": [
+                "./assets/images/performer7.png"
+            ]
+        },
+        {
+            "teamName": "ビザ必要な外国人達",
+            "description": "資格外活動許可：原則28時間以内・風俗営業等の従事を除く。",
+            "tags": [],
+            "images": [
+                "./assets/images/performer4.png",
+                "./assets/images/performer8.png"
+            ]
+        },
+        {
+            "teamName": "人",
+            "description": "精神的な若さとは、主観的な時間感覚によるものではないか。集中している時、時間は一瞬のように過ぎ去る。反対に、退屈の中では数分さえ長く感じられる。時間は一定ではなく、意識の状態によって伸び縮みしている。<br>IAMAS入学後、本イベント名の由来となる講義を受講し、その中で触れられていた Henri Bergson の時間論に惹かれた。ベルクソンのいう「持続」とは、時計によって均等に区切られた時間ではなく、主体の内側で絶えず変化し続ける、生きられた時間である。そして精神的若さとは、「未来が未分化である感覚」を保持できる状態なのではないかと考えるようになった。その基盤には、固定化されない流動的な主観時間の感覚が存在している。",
+            "tags": [],
+            "images": [
+                "./assets/images/performer1.png",
+                "./assets/images/performer9.png"
+            ]
+        }
+    ]
+}
