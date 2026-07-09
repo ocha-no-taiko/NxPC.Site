@@ -25,6 +25,15 @@ function toJstIso(dateTimeString) {
 	return dateTimeString.replace(' ', 'T') + '+09:00';
 }
 
+// macOSのファイルシステム上では日本語ファイル名がNFD(濁点等が分解された形式)
+// になるが、git は core.precomposeunicode により commit 時にNFC(合成形式)へ
+// 変換して記録するため、GitHub Pages 等にデプロイされる実ファイル名は常にNFC。
+// event.json の表記がNFDのままだとバイト単位で一致せず404になるため、
+// パスは書き出す前にNFCへ揃える
+function normalizePath(assetPath) {
+	return assetPath.normalize('NFC');
+}
+
 function buildMarqueeText(event) {
 	return `${event.date}(${event.dayOfWeek})_${event.openTime}-${event.closeTime}_${event.venue.name}`;
 }
@@ -62,7 +71,7 @@ function buildYoutubeIcon(live, assets) {
 	// 配信中かどうかはビルド時ではなく閲覧者のブラウザで判定するため、
 	// デフォルトは非表示にしておき main.js が live.start/end と現在時刻を比較して表示を切り替える
 	return `\t\t<a href="${escapeHtml(live.url)}" class="youtubeIcon" style="display:none;">
-			<img src="${escapeHtml(assets.youtubeIcon)}">
+			<img src="${escapeHtml(normalizePath(assets.youtubeIcon))}">
 		</a>`;
 }
 
@@ -86,7 +95,7 @@ function buildTimetable(assets) {
 					time table
 				</div>
 				<div class="contents">
-					<img src="${escapeHtml(assets.timetable)}">
+					<img src="${escapeHtml(normalizePath(assets.timetable))}">
 				</div>
 			</div>`;
 }
@@ -96,7 +105,7 @@ function buildPerformerImages(images) {
 	const layoutClass = layoutClasses[Math.min(images.length, 3)];
 	const imgs = images
 		.slice(0, 3)
-		.map((src, index) => `\t\t\t\t\t\t\t<img src="${escapeHtml(src)}" class="image${index + 1}">`)
+		.map((src, index) => `\t\t\t\t\t\t\t<img src="${escapeHtml(normalizePath(src))}" class="image${index + 1}">`)
 		.join('\n');
 	return `\t\t\t\t\t\t<div class="imagearea ${layoutClass}">\n${imgs}\n\t\t\t\t\t\t</div>`;
 }
@@ -166,18 +175,18 @@ ${buildYoutubeIcon(live, assets)}
 		<div id="firstView">
 			<div class="video_bg">
 				<div class="video prev">
-					<video src="${escapeHtml(assets.videos.pcFirst)}" autoplay muted loop playsinline class="pc_only"></video>
+					<video src="${escapeHtml(normalizePath(assets.videos.pcFirst))}" autoplay muted loop playsinline class="pc_only"></video>
 				</div>
 				<div class="video next">
-					<video src="${escapeHtml(assets.videos.pcSecond)}" autoplay muted loop playsinline class="pc_only"></video>
+					<video src="${escapeHtml(normalizePath(assets.videos.pcSecond))}" autoplay muted loop playsinline class="pc_only"></video>
 				</div>
 				<div class="video prev">
-					<video src="${escapeHtml(assets.videos.sp)}" autoplay muted loop playsinline class="sp_only"></video>
+					<video src="${escapeHtml(normalizePath(assets.videos.sp))}" autoplay muted loop playsinline class="sp_only"></video>
 				</div>
 			</div>
 			<div class="logoarea">
-				<lottie-player src="${escapeHtml(assets.logos.pc)}" autoplay class="logo pc_only"></lottie-player>
-				<lottie-player src="${escapeHtml(assets.logos.sp)}" autoplay class="logo sp_only"></lottie-player>
+				<lottie-player src="${escapeHtml(normalizePath(assets.logos.pc))}" autoplay class="logo pc_only"></lottie-player>
+				<lottie-player src="${escapeHtml(normalizePath(assets.logos.sp))}" autoplay class="logo sp_only"></lottie-player>
 			</div>
 
 			<div class="scrollarea ready">
