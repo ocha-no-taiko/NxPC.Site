@@ -1,17 +1,17 @@
 {
     "event": {
-        "title": "NxPC.Live vol.78",
-        "date": "2026.6.19",
-        "dayOfWeek": "Fri",
-        "openTime": "18:00",
+        "title": "NxPC.Live vol.79",
+        "date": "2026.7.18",
+        "dayOfWeek": "Sat",
+        "openTime": "17:00",
         "closeTime": "21:00",
         "venue": {
-            "name": "IAMAS GALLERY 1",
-            "address": "岐阜県大垣市加賀野4丁目1-7 ソフトピアジャパン センタービル3階",
+            "name": "IAMAS Seminar Hall",
+            "address": "岐阜県大垣市加賀野4丁目1-7 ソフトピアジャパン センタービル1階",
             "addressLinesSp": [
-                "IAMAS GALLERY 1",
+                "IAMAS Seminar Hall",
                 "岐阜県大垣市加賀野4丁目1-7",
-                "ソフトピアジャパン センタービル3階"
+                "ソフトピアジャパン センタービル1階"
             ]
         },
         "about": [
@@ -21,8 +21,8 @@
     },
     "live": {
         "url": "https://www.youtube.com/@nxpclab",
-        "start": "2026-06-19 18:00:00",
-        "end": "2026-06-19 21:00:00"
+        "start": "2026-07-18 17:00:00",
+        "end": "2026-07-18 21:00:00"
     },
     "theme": {
         "colors": {
@@ -55,54 +55,119 @@
         "youtubeIcon": "./assets/images/youtube_logo.png"
     },
     "credits": [
-        "visual design: OUGA ,米田 , Yuki Yoshikawa",
+        "visual design: OUGA ,sekizuihan , Yuki Yoshikawa",
         "web: ichinose ,Tusq ,AOK"
     ],
     "performers": [
         {
-            "teamName": "三工",
-            "description": "工。工！工？<br><br>※ 工学系３名によるチームです。",
+            "teamName": "noēma ",
+            "description": "光・ノイズ・揺らぎの共鳴",
             "tags": [],
             "images": [
-                "./assets/images/performer1.png",
-                "./assets/images/performer2.png",
-                "./assets/images/performer3.png"
+                "./assets/images/アーティスト画像_noema.png"
             ]
         },
         {
-            "teamName": "プラネタリア",
-            "description": "意識は、宇宙の夢を見る。 <br>ここは、生命的な宇宙の創発の場。 <br>みんなで生命が生まれる瞬間について考えていきましょう。",
+            "teamName": "ピンポン魂",
+            "description": "たくさん練習して<br>っよくなろうよ！<br>きっと<br>ゆめは<br>うらぎらないから",
             "tags": [],
             "images": [
-                "./assets/images/performer4.png",
-                "./assets/images/performer5.png",
-                "./assets/images/performer6.png"
+                "./assets/images/アーティスト画像＿ピンポン魂.png"
             ]
         },
         {
-            "teamName": "po-yoyo",
-            "description": "poyoyo　は　じかんを　さまよう <br>見えているよう　で　見えていない <br>そこにあるよう　で　いてそこにはない <br>たりているよう　で　欠けている <br>あなたの記憶は補完される <br>poyoyo　の　ことを見つめていれば <br>どこにもある　けど　どこにもない <br>いない　しらない　ここではないどこか",
-            "tags": [],
+            "teamName": "hrx",
+            "description": "乱数発生器は集合的意識に反応するのか？",
+            "tags": [
+                "乱数発生器",
+                "集合意識"
+            ],
             "images": [
-                "./assets/images/performer7.png"
+                "./assets/images/アーティスト画像_hrx.png"
             ]
         },
         {
-            "teamName": "ビザ必要な外国人達",
-            "description": "資格外活動許可：原則28時間以内・風俗営業等の従事を除く。",
-            "tags": [],
+            "teamName": "玩玩戲團",
+            "description": "ARとヴィジュアル、サウンドパフォーマンスによる新感覚紙芝居<br>これは昔々IAMASという場所ができるずっと昔の物語<br>風が吹くたびに、まだ名前のないものに形が与えられていく 葉隠の子の物語",
+            "tags": [
+                "AR",
+                "音楽"
+            ],
             "images": [
-                "./assets/images/performer4.png",
-                "./assets/images/performer8.png"
+                "./assets/images/アーティスト画像_玩玩戲團.png"
             ]
         },
         {
-            "teamName": "人",
-            "description": "精神的な若さとは、主観的な時間感覚によるものではないか。集中している時、時間は一瞬のように過ぎ去る。反対に、退屈の中では数分さえ長く感じられる。時間は一定ではなく、意識の状態によって伸び縮みしている。<br>IAMAS入学後、本イベント名の由来となる講義を受講し、その中で触れられていた Henri Bergson の時間論に惹かれた。ベルクソンのいう「持続」とは、時計によって均等に区切られた時間ではなく、主体の内側で絶えず変化し続ける、生きられた時間である。そして精神的若さとは、「未来が未分化である感覚」を保持できる状態なのではないかと考えるようになった。その基盤には、固定化されない流動的な主観時間の感覚が存在している。",
+            "teamName": "きみのままでいてね。",
+            "description": "対象のあるがまま(mama)を映し出す。あるがまま、とは私たちが普段耳にすることのできない電磁場(ambient)である。そこで、その周波数を生かした「mamambient」を提唱し、ととんとん！",
+            "tags": [
+                "ambient",
+                "mamambient"
+            ],
+            "images": [
+                "./assets/images/アーティスト画像_きみのままでいてね。.jpg"
+            ]
+        },
+        {
+            "teamName": "ミミザリナ",
+            "description": "2002年に結成されたMimiz（鈴木悦久、飛谷謙介、福島諭）がなぜか今年IAMASに再集結。独自のセッションシステム “Layered Session” を確立し、その即興的な音に呼応するかたちで、ジダーノワ アリーナがライブアニメーションを制作する。",
+            "tags": [
+                "ノイズ",
+                "即興",
+                "アニメーション"
+            ],
+            "images": [
+                "./assets/images/アーティスト画像_ミミザリナ.png"
+            ]
+        },
+        {
+            "teamName": "Tomoe KOJIMA feat. Kohichi Katakura",
+            "description": "3月にIAMASを修了しました。在学中にNxPCに出演したことは一度もありません。出演に関してみなさん驚いているとは思いますが、一番驚いているのは私です。人生の先輩の後輩・片倉さんとがんばります。",
+            "tags": [
+                "SoundPerformance",
+                "ParticipatoryWork"
+            ],
+            "images": [
+                "./assets/images/アーティスト画像_Tomoe_KOJIMA_feat._Kohichi_Katakura.png"
+            ]
+        },
+        {
+            "teamName": "第三怪察隊",
+            "description": "第三怪察隊。アンバランスゾーンに出現する怪獣・怪異現象の調査、記録、観測を任務とする架空調査組織。未知の生命の痕跡を追い続ける。",
+            "tags": [
+                "怪獣",
+                "テルミン"
+            ],
+            "images": [
+                "./assets/images/アーティスト画像_第三怪察隊.png"
+            ]
+        },
+        {
+            "teamName": "bbbbbbbb",
+            "description": "",
             "tags": [],
             "images": [
-                "./assets/images/performer1.png",
-                "./assets/images/performer9.png"
+                "./assets/images/performer1.png"
+            ]
+        },
+        {
+            "teamName": "Ambient Techno Poetry研究会",
+            "description": "写真をして、散歩をして、日記をする。",
+            "tags": [
+                "Ambient",
+                "Techno",
+                "PoetryReading"
+            ],
+            "images": [
+                "./assets/images/アーティスト画像_Ambient_Techno_Poetory研究会.png"
+            ]
+        },
+        {
+            "teamName": "Exchange Künstler³",
+            "description": "We met at 3 a.m. on the tram after Ars Electronica party. Heading to another rave in Linz. Six months later, reunited at IAMAS. Now at NxPC, an experiment to determine how Dzikri's sound annoys Ghazal's brain to generate visuals.<br><br>Take a risk, visit Linz.",
+            "tags": [],
+            "images": [
+                "./assets/images/アーティスト画像＿Exchange Künstler³.jpg"
             ]
         }
     ]
