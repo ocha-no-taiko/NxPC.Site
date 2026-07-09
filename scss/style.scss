@@ -647,8 +647,8 @@ video
 		{
 			display               : grid;
 			grid-template-columns : repeat(2, 1fr);
-			row-gap               : 4.6875%;
-			column-gap            : 7.8125%;
+			row-gap               : vw(90, 1920);
+			column-gap            : vw(150, 1920);
 
 			@media screen and (max-width: 767px) {
 				grid-template-columns : repeat(1, 1fr);
@@ -687,13 +687,17 @@ video
 					{
 						img
 						{
-							width  : vw(270, 1920);
-							max-width : 270px;
-							height : auto;
+							width      : vw(270, 1920);
+							max-width  : 270px;
+							height     : vw(270, 1920);
+							max-height : 270px;
+							object-fit : cover;
 
 							@media screen and (max-width: 767px) {
-								width : vw(190, 390);
-								max-width : 190px;
+								width      : vw(190, 390);
+								max-width  : 190px;
+								height     : vw(190, 390);
+								max-height : 190px;
 							}
 						}
 					}
@@ -705,13 +709,17 @@ video
 
 						img
 						{
-							width  : vw(202, 1920);
-							max-width : 202px;
-							height : auto;
+							width      : vw(202, 1920);
+							max-width  : 202px;
+							height     : vw(202, 1920);
+							max-height : 202px;
+							object-fit : cover;
 
 							@media screen and (max-width: 767px) {
-								width : vw(154, 390);
-								max-width : 154px;
+								width      : vw(154, 390);
+								max-width  : 154px;
+								height     : vw(154, 390);
+								max-height : 154px;
 							}
 						}
 
@@ -732,13 +740,17 @@ video
 
 						img
 						{
-							width  : vw(135, 1920);
-							max-width : 135px;
-							height : auto;
+							width      : vw(135, 1920);
+							max-width  : 135px;
+							height     : vw(135, 1920);
+							max-height : 135px;
+							object-fit : cover;
 
 							@media screen and (max-width: 767px) {
-								width : vw(102, 390);
-								max-width : 102px;
+								width      : vw(102, 390);
+								max-width  : 102px;
+								height     : vw(102, 390);
+								max-height : 102px;
 							}
 						}
 
