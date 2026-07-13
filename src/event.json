@@ -6,12 +6,11 @@
         "openTime": "17:00",
         "closeTime": "21:00",
         "venue": {
-            "name": "IAMAS Seminar Hall",
+            "name": "Softopia Japan Center",
             "address": "岐阜県大垣市加賀野4丁目1-7 ソフトピアジャパン センタービル1階",
             "addressLinesSp": [
-                "IAMAS Seminar Hall",
-                "岐阜県大垣市加賀野4丁目1-7",
-                "ソフトピアジャパン センタービル1階"
+                "センタービル1F セミナーホール",
+                "岐阜県大垣市加賀野4丁目1-7"
             ]
         },
         "about": [
@@ -34,22 +33,19 @@
             "stylesheets": [
                 "https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap",
                 "https://fonts.googleapis.com/css2?family=Roboto:wght@100..900&display=swap",
+                "https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&display=swap",
                 "https://use.typekit.net/dxk7knf.css"
             ],
-            "body": "'Noto Sans', sans-serif",
-            "heading": "'redaction-50', sans-serif",
-            "performerTitle": "'noto-sans', sans-serif"
+            "body": "'平成丸ゴシック Std W4', 'HeiseiMaruGoStd-W4', heisei-maru-gothic-std, 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif",
+            "heading": "'平成丸ゴシック Std W6', 'HeiseiMaruGoStd-W6', heisei-maru-gothic-std, 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif",
+            "performerTitle": "'平成丸ゴシック Std W6', 'HeiseiMaruGoStd-W6', heisei-maru-gothic-std, 'Zen Maru Gothic', 'Hiragino Maru Gothic ProN', sans-serif"
         }
     },
     "assets": {
         "videos": {
-            "pcFirst": "./assets/videos/green_pc.mp4",
-            "pcSecond": "./assets/videos/purple_pc.mp4",
-            "sp": "./assets/videos/movie_sp.mp4"
-        },
-        "logos": {
-            "pc": "./assets/logo_anim.lottie.json",
-            "sp": "./assets/logo_sp.lottie.json"
+            "pcFirst": "./assets/videos/NxPC_visual_vol.79_16-9_web.mp4",
+            "pcSecond": "./assets/videos/NxPC_visual_vol.79_16-9_web.mp4",
+            "sp": "./assets/videos/NxPC_visual_vol.79_スマホ用ー16-9.mp4"
         },
         "timetable": "./assets/images/timetable.png",
         "youtubeIcon": "./assets/images/youtube_logo.png"
@@ -60,20 +56,33 @@
     ],
     "performers": [
         {
-            "teamName": "noēma ",
-            "description": "光・ノイズ・揺らぎの共鳴",
+            "teamName": "Tomoe KOJIMA feat. Kohichi Katakura",
+            "description": "3月にIAMASを修了しました。在学中にNxPCに出演したことは一度もありません。出演に関してみなさん驚いているとは思いますが、一番驚いているのは私です。人生の先輩の後輩・片倉さんとがんばります。",
             "tags": [
-                "Glitch",
-                "Resonance",
-                "Flux"
+                "SoundPerformance",
+                "ParticipatoryWork"
             ],
+            "guest": true,
             "images": [
-                "./assets/images/アーティスト画像_noema.png"
+                "./assets/images/アーティスト画像_Tomoe_KOJIMA_feat._Kohichi_Katakura.png"
+            ]
+        },
+        {
+            "teamName": "ミミザリナ",
+            "description": "2002年に結成されたMimiz（鈴木悦久、飛谷謙介、福島諭）がなぜか今年IAMASに再集結。独自のセッションシステム “Layered Session” を確立し、その即興的な音に呼応するかたちで、ジダーノワ アリーナがライブアニメーションを制作する。",
+            "tags": [
+                "ノイズ",
+                "即興",
+                "アニメーション"
+            ],
+            "guest": true,
+            "images": [
+                "./assets/images/アーティスト画像_ミミザリナ.png"
             ]
         },
         {
             "teamName": "ピンポン魂",
-            "description": "たくさん練習して<br>っよくなろうよ！<br>きっと<br>ゆめは<br>うらぎらないから",
+            "description": "たくさん練習して<br>っよくなろうよ！<br>きっと<br>ゅめは<br>うらぎらないから",
             "tags": [
                 "卓球",
                 "iamas卓球部",
@@ -119,29 +128,6 @@
             ]
         },
         {
-            "teamName": "ミミザリナ",
-            "description": "2002年に結成されたMimiz（鈴木悦久、飛谷謙介、福島諭）がなぜか今年IAMASに再集結。独自のセッションシステム “Layered Session” を確立し、その即興的な音に呼応するかたちで、ジダーノワ アリーナがライブアニメーションを制作する。",
-            "tags": [
-                "ノイズ",
-                "即興",
-                "アニメーション"
-            ],
-            "images": [
-                "./assets/images/アーティスト画像_ミミザリナ.png"
-            ]
-        },
-        {
-            "teamName": "Tomoe KOJIMA feat. Kohichi Katakura",
-            "description": "3月にIAMASを修了しました。在学中にNxPCに出演したことは一度もありません。出演に関してみなさん驚いているとは思いますが、一番驚いているのは私です。人生の先輩の後輩・片倉さんとがんばります。",
-            "tags": [
-                "SoundPerformance",
-                "ParticipatoryWork"
-            ],
-            "images": [
-                "./assets/images/アーティスト画像_Tomoe_KOJIMA_feat._Kohichi_Katakura.png"
-            ]
-        },
-        {
             "teamName": "第三怪察隊",
             "description": "第三怪察隊。アンバランスゾーンに出現する怪獣・怪異現象の調査、記録、観測を任務とする架空調査組織。未知の生命の痕跡を追い続ける。",
             "tags": [
@@ -179,9 +165,25 @@
         {
             "teamName": "Exchange Künstler³",
             "description": "We met at 3 a.m. on the tram after Ars Electronica party. Heading to another rave in Linz. Six months later, reunited at IAMAS. Now at NxPC, an experiment to determine how Dzikri's sound annoys Ghazal's brain to generate visuals.<br><br>Take a risk, visit Linz.",
-            "tags": [],
+            "tags": [
+                "Tangible",
+                "Brainwave",
+                "Cymatic"
+            ],
             "images": [
                 "./assets/images/アーティスト画像＿Exchange Künstler³.jpg"
+            ]
+        },
+        {
+            "teamName": "noēma (ALL TIME) ",
+            "description": "光・ノイズ・揺らぎの共鳴",
+            "tags": [
+                "Glitch",
+                "Resonance",
+                "Flux"
+            ],
+            "images": [
+                "./assets/images/アーティスト画像_noema.png"
             ]
         }
     ]

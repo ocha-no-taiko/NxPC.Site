@@ -103,7 +103,18 @@ body
 
 	padding          : vw(100, 1920);
 
-	background-color : var(--color-accent);
+	// Liquid Glass 風パネル。無色(色味を付けない)の磨りガラスで、
+	// 背景の雲動画がうっすら透けて見える。パネル内の文字は黒に切り替える。
+	--color-text            : #0A0A0A;
+	color                    : var(--color-text);
+
+	background-color        : rgba(255, 255, 255, 0.35);
+	backdrop-filter         : blur(24px) saturate(160%);
+	-webkit-backdrop-filter : blur(24px) saturate(160%);
+	border                  : 1px solid rgba(255, 255, 255, 0.6);
+	border-radius           : 8px;
+	box-shadow              : 0 8px 40px rgba(0, 0, 0, 0.15),
+	                          inset 0 1px 0 rgba(255, 255, 255, 0.5);
 
 	@media screen and (max-width: 767px) {
 		width     : vw(360, 390);
@@ -129,6 +140,18 @@ body
 	font-weight   : 400;
 	font-style    : normal;
 	margin-bottom : 10px;
+}
+
+// キービジュアルに合わせ、見出し・タイトル・本文を横 150% に引き伸ばす（平べったい表情）。
+// transform だけだと枠からはみ出すので、幅を 2/3 にして 1.5 倍でちょうど収める。
+.heading,
+.title,
+.text
+{
+	display          : block;
+	width            : 66.66%;
+	transform        : scaleX(1.5);
+	transform-origin : left center;
 }
 
 .pc_only
@@ -268,35 +291,6 @@ select
 
 #firstView
 {
-	.logoarea
-	{
-		position  : fixed;
-		top       : 50%;
-		left      : 50%;
-
-		transform : translate(-50%, -50%);
-		z-index   : -1;
-
-		.logo
-		{
-			opacity : 0;
-
-			width     : vw(1680, 1920) !important;
-			height    : auto !important;
-			max-width : 1680px !important;
-
-			@media screen and (max-width: 767px) {
-				width     : vw(85, 390) !important;
-				max-width : 85px !important;
-			}
-
-			&.fadeIn
-			{
-				opacity : 1;
-			}
-		}
-	}
-
 	.scrollarea
 	{
 		font-family    : var(--font-heading);
@@ -492,7 +486,7 @@ video
 		height           : vw(40, 1920);
 
 		z-index          : 0;
-		background-color : var(--color-accent);
+		background-color : var(--color-bg);
 
 		display          : flex;
 		align-items      : center;
@@ -816,4 +810,152 @@ video
 			margin-top : 50px;
 		}
 	}
+}
+
+
+/* =========================================================
+   ゲスト演出（キラカード風）
+   event.json で performer に "guest": true を付けると有効。
+   画像をフレームで囲み、右上に GUEST バッジ＋グリッチ演出。
+   ========================================================= */
+
+.guestframe
+{
+	position    : relative;
+	display     : inline-block;
+	line-height : 0;          // img 下の余白を消す
+	isolation   : isolate;    // mix-blend-mode をこのフレーム内に閉じ込める
+
+	// ベースのフレーム＋ネオンの発光
+	outline        : 2px solid #FFFFFF;
+	outline-offset : 4px;
+	box-shadow     : 0 0 12px rgba(0, 255, 255, 0.55), 0 0 12px rgba(255, 0, 255, 0.45);
+
+	// クロマチックにずれるグリッチ枠（シアン／マゼンタ）
+	&::before,
+	&::after
+	{
+		content        : "";
+		position       : absolute;
+		inset          : -4px;
+		border         : 2px solid;
+		pointer-events : none;
+		opacity        : 0;
+		mix-blend-mode : screen;
+	}
+
+	&::before
+	{
+		border-color : #00FFFF;
+		animation    : guest-glitch-1 2.6s steps(1, end) infinite;
+	}
+
+	&::after
+	{
+		border-color : #FF00FF;
+		animation    : guest-glitch-2 2.6s steps(1, end) infinite;
+	}
+}
+
+// 箔（ホログラム）のスイープ
+.guest-holo
+{
+	position        : absolute;
+	inset           : 0;
+	z-index         : 1;
+	pointer-events  : none;
+	mix-blend-mode  : screen;
+
+	background      : linear-gradient(
+		115deg,
+		transparent 30%,
+		rgba(0, 255, 255, 0.35) 44%,
+		rgba(255, 255, 255, 0.55) 50%,
+		rgba(255, 0, 255, 0.35) 56%,
+		transparent 70%
+	);
+	background-size : 250% 250%;
+	animation       : guest-holo 4.5s ease-in-out infinite;
+}
+
+// 右上の GUEST バッジ
+.guest-badge
+{
+	position       : absolute;
+	top            : -10px;
+	right          : -10px;
+	z-index        : 2;
+
+	padding        : 3px 10px;
+
+	font-family    : var(--font-heading);
+	font-size      : 13px;
+	line-height    : 1;
+	letter-spacing : 0.12em;
+	color          : #0A0A0A;
+	background     : #FFFFFF;
+	white-space    : nowrap;
+
+	transform      : skewX(-12deg);
+	box-shadow     : 0 0 8px rgba(0, 255, 255, 0.8);
+
+	animation      : guest-badge-flicker 2.6s steps(1, end) infinite;
+
+	@media screen and (max-width: 767px) {
+		font-size : 11px;
+		padding   : 2px 8px;
+		top       : -8px;
+		right     : -8px;
+	}
+}
+
+@keyframes guest-glitch-1
+{
+	0%, 100% { opacity: 0;   transform: translate(0, 0); }
+	8%       { opacity: 0.9; transform: translate(-3px, 1px); }
+	11%      { opacity: 0;   transform: translate(0, 0); }
+	40%      { opacity: 0.8; transform: translate(2px, -2px); }
+	43%      { opacity: 0;   transform: translate(0, 0); }
+	70%      { opacity: 0.7; transform: translate(-2px, 2px); }
+	73%      { opacity: 0;   transform: translate(0, 0); }
+}
+
+@keyframes guest-glitch-2
+{
+	0%, 100% { opacity: 0;   transform: translate(0, 0); }
+	8%       { opacity: 0.9; transform: translate(3px, -1px); }
+	11%      { opacity: 0;   transform: translate(0, 0); }
+	40%      { opacity: 0.8; transform: translate(-2px, 2px); }
+	43%      { opacity: 0;   transform: translate(0, 0); }
+	70%      { opacity: 0.7; transform: translate(2px, -2px); }
+	73%      { opacity: 0;   transform: translate(0, 0); }
+}
+
+@keyframes guest-holo
+{
+	0%   { background-position: 0% 50%; }
+	50%  { background-position: 100% 50%; }
+	100% { background-position: 0% 50%; }
+}
+
+@keyframes guest-badge-flicker
+{
+	0%, 47%, 100% { opacity: 1;   transform: skewX(-12deg) translate(0, 0); }
+	49%           { opacity: 0.4; transform: skewX(-12deg) translate(-1px, 1px); }
+	51%           { opacity: 1;   transform: skewX(-12deg) translate(0, 0); }
+}
+
+// アニメーションを控えたい設定のユーザーには静止したフレームだけ見せる
+@media (prefers-reduced-motion: reduce)
+{
+	.guestframe::before,
+	.guestframe::after,
+	.guest-holo,
+	.guest-badge
+	{
+		animation : none;
+	}
+
+	.guestframe::before { opacity: 0.6; transform: translate(-2px, 2px); }
+	.guestframe::after  { opacity: 0.6; transform: translate(2px, -2px); }
 }

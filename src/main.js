@@ -9,12 +9,12 @@ $(function()
         }
     }
 
-    $('lottie-player').on('ready', function() {
-        $(this).addClass('fadeIn');
-        $('.ready').addClass('fadeIn');
-    });
+    // タイトルロゴ(Lottieアニメーション)は廃止したため、
+    // 以前はロゴの再生完了をトリガーにしていた本文表示を
+    // 固定時間後に行うようにする。
+    $('.ready').addClass('fadeIn');
 
-    $('lottie-player').on('complete', function() {
+    setTimeout(function() {
         $('.innerarea').removeClass('d-none');
         $(window).trigger('scroll');
         $('.ready').removeClass('blink');
@@ -23,8 +23,7 @@ $(function()
         setTimeout(function() {
             $('.scroll').addClass('fadeIn');
         }, 1500);
-        return;
-    });
+    }, 1800);
 
     $(window).on('scroll', function()
     {

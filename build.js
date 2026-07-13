@@ -100,12 +100,27 @@ function buildTimetable(assets) {
 			</div>`;
 }
 
-function buildPerformerImages(images) {
+function buildPerformerImages(images, isGuest) {
 	const layoutClasses = ['', 'onePieceImage', 'twoPieceImage', 'threePieceImage'];
 	const layoutClass = layoutClasses[Math.min(images.length, 3)];
 	const imgs = images
 		.slice(0, 3)
-		.map((src, index) => `\t\t\t\t\t\t\t<img src="${escapeHtml(normalizePath(src))}" class="image${index + 1}">`)
+		.map((src, index) => {
+			const imgClass = `image${index + 1}`;
+			const imgSrc = escapeHtml(normalizePath(src));
+			if (!isGuest) {
+				return `\t\t\t\t\t\t\t<img src="${imgSrc}" class="${imgClass}">`;
+			}
+			// ゲストは画像をフレームで囲み、GUEST バッジ＋グリッチ演出を付ける
+			// (位置揃え用の image クラスは img ではなくフレーム側へ移す)
+			return [
+				`\t\t\t\t\t\t\t<span class="guestframe ${imgClass}">`,
+				`\t\t\t\t\t\t\t\t<img src="${imgSrc}">`,
+				`\t\t\t\t\t\t\t\t<span class="guest-holo" aria-hidden="true"></span>`,
+				`\t\t\t\t\t\t\t\t<span class="guest-badge" aria-hidden="true">GUEST</span>`,
+				`\t\t\t\t\t\t\t</span>`,
+			].join('\n');
+		})
 		.join('\n');
 	return `\t\t\t\t\t\t<div class="imagearea ${layoutClass}">\n${imgs}\n\t\t\t\t\t\t</div>`;
 }
@@ -119,8 +134,9 @@ function buildTags(tags) {
 }
 
 function buildPerformer(performer) {
-	return `\t\t\t\t\t<div class="content">
-${buildPerformerImages(performer.images)}
+	const contentClass = performer.guest ? 'content guest' : 'content';
+	return `\t\t\t\t\t<div class="${contentClass}">
+${buildPerformerImages(performer.images, performer.guest)}
 						<div class="title">
 							${escapeHtml(performer.teamName)}
 						</div>${buildTags(performer.tags)}
@@ -183,10 +199,6 @@ ${buildYoutubeIcon(live, assets)}
 				<div class="video prev">
 					<video src="${escapeHtml(normalizePath(assets.videos.sp))}" autoplay muted loop playsinline class="sp_only"></video>
 				</div>
-			</div>
-			<div class="logoarea">
-				<lottie-player src="${escapeHtml(normalizePath(assets.logos.pc))}" autoplay class="logo pc_only"></lottie-player>
-				<lottie-player src="${escapeHtml(normalizePath(assets.logos.sp))}" autoplay class="logo sp_only"></lottie-player>
 			</div>
 
 			<div class="scrollarea ready">
@@ -252,7 +264,6 @@ ${buildPerformers(performers)}
 
 	<script src="jquery-2.1.3.min.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
-	<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 	<script src="main.js"></script>
 
 </body>
