@@ -62,7 +62,11 @@
         {
             "teamName": "noēma ",
             "description": "光・ノイズ・揺らぎの共鳴",
-            "tags": [],
+            "tags": [
+                "Glitch",
+                "Resonance",
+                "Flux"
+            ],
             "images": [
                 "./assets/images/アーティスト画像_noema.png"
             ]
@@ -70,7 +74,13 @@
         {
             "teamName": "ピンポン魂",
             "description": "たくさん練習して<br>っよくなろうよ！<br>きっと<br>ゆめは<br>うらぎらないから",
-            "tags": [],
+            "tags": [
+                "卓球",
+                "iamas卓球部",
+                "魂の卓球",
+                "スマッシュ",
+                "beyondpingpong"
+            ],
             "images": [
                 "./assets/images/アーティスト画像＿ピンポン魂.png"
             ]
@@ -143,11 +153,15 @@
             ]
         },
         {
-            "teamName": "bbbbbbbb",
-            "description": "",
-            "tags": [],
+            "teamName": "びび+Shima",
+            "description": "ノイズやハードコア表現とポップスの境界を跨いだ楽曲制作を行うアーティストびびとエクストリームVJ合宿などの企画を行うIAMASの卒業生のShimaをゲストVJにタッグを組む。",
+            "tags": [
+                "Hardcore",
+                "Pop",
+                "Noise"
+            ],
             "images": [
-                "./assets/images/performer1.png"
+                "./assets/images/アーティスト画像_bibi shima.JPG"
             ]
         },
         {
