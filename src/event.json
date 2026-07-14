@@ -64,7 +64,7 @@
             ],
             "guest": true,
             "images": [
-                "./assets/images/アーティスト画像_Tomoe_KOJIMA_feat._Kohichi_Katakura.png"
+                "./assets/images/kojikata.png"
             ]
         },
         {
@@ -77,7 +77,7 @@
             ],
             "guest": true,
             "images": [
-                "./assets/images/アーティスト画像_ミミザリナ.png"
+                "./assets/images/mimizalina.png"
             ]
         },
         {
@@ -91,7 +91,7 @@
                 "beyondpingpong"
             ],
             "images": [
-                "./assets/images/アーティスト画像＿ピンポン魂.png"
+                "./assets/images/pingpong.png"
             ]
         },
         {
@@ -102,7 +102,7 @@
                 "集合意識"
             ],
             "images": [
-                "./assets/images/アーティスト画像_hrx.png"
+                "./assets/images/hrx.png"
             ]
         },
         {
@@ -113,7 +113,7 @@
                 "音楽"
             ],
             "images": [
-                "./assets/images/アーティスト画像_玩玩戲團.png"
+                "./assets/images/wangwang.png"
             ]
         },
         {
@@ -124,7 +124,7 @@
                 "mamambient"
             ],
             "images": [
-                "./assets/images/アーティスト画像_きみのままでいてね。.jpg"
+                "./assets/images/mamamio.jpg"
             ]
         },
         {
@@ -135,7 +135,7 @@
                 "テルミン"
             ],
             "images": [
-                "./assets/images/アーティスト画像_第三怪察隊.png"
+                "./assets/images/kbs.png"
             ]
         },
         {
@@ -147,7 +147,7 @@
                 "Noise"
             ],
             "images": [
-                "./assets/images/アーティスト画像_bibi shima.JPG"
+                "./assets/images/bibixshima.JPG"
             ]
         },
         {
@@ -159,7 +159,7 @@
                 "PoetryReading"
             ],
             "images": [
-                "./assets/images/アーティスト画像_Ambient_Techno_Poetory研究会.png"
+                "./assets/images/atp.png"
             ]
         },
         {
@@ -171,7 +171,7 @@
                 "Cymatic"
             ],
             "images": [
-                "./assets/images/アーティスト画像＿Exchange Künstler³.jpg"
+                "./assets/images/EK.jpg"
             ]
         },
         {
@@ -183,7 +183,7 @@
                 "Flux"
             ],
             "images": [
-                "./assets/images/アーティスト画像_noema.png"
+                "./assets/images/noema.png"
             ]
         }
     ]
