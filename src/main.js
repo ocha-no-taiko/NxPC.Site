@@ -20,9 +20,6 @@ $(function()
         $('.ready').removeClass('blink');
         $('.ready').addClass('fadeOut');
         $('.ready').addClass('d-none');
-        setTimeout(function() {
-            $('.scroll').addClass('fadeIn');
-        }, 1500);
     }, 1800);
 
     $(window).on('scroll', function()
@@ -47,8 +44,6 @@ $(function()
                 if ($this.hasClass('prev')) {
                     $this.removeClass('fadeIn');
                     $this.addClass('fadeOut');
-                    $('.scroll').removeClass('fadeIn');
-                    $('.scroll').addClass('fadeOut');
                 }
                 else if ($this.hasClass('next')) {
                     $this.removeClass('fadeOut');
@@ -61,10 +56,6 @@ $(function()
                 if ($this.hasClass('prev')) {
                     $this.removeClass('fadeOut');
                     $this.addClass('fadeIn');
-                    if (!$('.innerarea').hasClass('d-none')) {
-                        $('.scroll').removeClass('fadeOut');
-                        $('.scroll').addClass('fadeIn');
-                    }
                 }
                 else if ($this.hasClass('next')) {
                     $this.removeClass('fadeIn');

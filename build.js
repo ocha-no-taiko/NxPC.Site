@@ -204,11 +204,6 @@ ${buildYoutubeIcon(live, assets)}
 			<div class="scrollarea ready">
 					<span class="blink">Loading...</span>
 				</div>
-				<div class="scrollarea scroll">
-					<div class="scroll_down" id="type03">
-						<a href="#">Scroll</a>
-					</div>
-			</div>
 		</div>
 	</div>
     <div id="main">
